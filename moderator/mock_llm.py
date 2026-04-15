@@ -10,13 +10,12 @@ load_dotenv()
 client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
 
-def generate_response(prompt, user_text):
+def generate_response(prompt):
     """
     Call Groq API to generate LLM-based moderation response.
     
     Args:
-        prompt: The formatted prompt for the LLM
-        user_text: The original user text to moderate
+        prompt: The formatted prompt for the LLM (contains user text and policies)
     
     Returns:
         A dictionary with classification, violated_policy, and reasoning

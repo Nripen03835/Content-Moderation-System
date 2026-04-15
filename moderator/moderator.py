@@ -6,8 +6,8 @@ from moderator.parser import format_output
 def moderate_text(user_text):
     prompt = build_prompt(user_text)
 
-    # Simulated LLM reasoning
-    llm_output = generate_response(prompt, user_text)
+    # Call Groq API for moderation
+    llm_output = generate_response(prompt)
 
     structured_output = format_output(llm_output, user_text)
 
